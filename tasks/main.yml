@@ -1,0 +1,14 @@
+---
+
+- name: get kitematic code for linux
+  git:
+    repo: https://github.com/zedtux/kitematic
+    version: linux-support
+    dest: ~/bin/kitematic
+  register: kitematic_code
+
+- name: install kitematic
+  shell: npm install
+  args:
+    chdir: ~/bin/kitematic
+  when: kitematic_code.changed

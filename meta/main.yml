@@ -1,0 +1,6 @@
+---
+
+dependencies:
+  - node
+  - git
+  - docker-engine
